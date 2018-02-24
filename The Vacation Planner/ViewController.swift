@@ -12,7 +12,11 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        startLoad()
+        do {
+            try URLHelper().startLoad([City].self, "http://localhost:8882/cities/", funcSucess, funcError)
+        } catch {
+            print("Error City not is Decodable")
+        }
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -21,30 +25,20 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    func startLoad() {
-        let url = URL(string: "http://localhost:8882/cities/")!
-        let task = URLSession.shared.dataTask(with: url) { data, response, error in
-            if let error = error {
-                print("Error requesting", error)
-                return
-            }
-            guard let httpResponse = response as? HTTPURLResponse,
-                (200...299).contains(httpResponse.statusCode) else {
-                    print("Http status error")
-                    return
-            }
-            if let mimeType = httpResponse.mimeType, mimeType == "application/json",
-                let data = data {
-                do {
-                    let cities = try JSONDecoder().decode([City].self, from: data)
-                    print(cities)
-                } catch let jsonError {
-                    print("Error serializing json", jsonError)
-                }
-            }
-        }
-        task.resume()
+    func funcSucess(data: [City])  {
+        print(data)
     }
-
+    
+    func funcError(error: URLHelperError)  {
+        switch error {
+        case URLHelperError.RequestError:
+            print("Error requesting")
+        case URLHelperError.HttpStatusError:
+            print("Error HTTP Status")
+        case URLHelperError.SerializationJsonError:
+            print("Error serialization JSON")
+        }
+    }
+    
 }
 
