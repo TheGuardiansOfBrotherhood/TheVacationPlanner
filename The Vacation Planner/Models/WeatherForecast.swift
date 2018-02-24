@@ -8,18 +8,11 @@
 
 import Foundation
 
-class WeatherForecast {
+struct WeatherForecast : Decodable {
     
     var date: String
     var temperature: Temperature
     var weather: String
     var woeid: String
-    
-    init(date: String, temperature: Temperature, weather: String, woeid: String) {
-        self.date = date
-        self.temperature = temperature
-        self.weather = weather
-        self.woeid = woeid
-    }
     
 }

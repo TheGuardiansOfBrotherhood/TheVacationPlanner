@@ -8,16 +8,10 @@
 
 import Foundation
 
-class Temperature {
+struct Temperature : Decodable {
     
     var max: Int
     var min: Int
     var unit: String
-    
-    init(max: Int, min: Int, unit: String) {
-        self.max = max
-        self.min = min
-        self.unit = unit
-    }
     
 }

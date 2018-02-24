@@ -8,20 +8,12 @@
 
 import Foundation
 
-class City {
+struct City : Decodable {
     
     var woeid: String
     var district: String
     var province: String
     var stateAcronym: String
     var country: String
-   
-    init(woeid: String, district: String, province: String, stateAcronym: String, country: String) {
-        self.woeid = woeid
-        self.district = district
-        self.province = province
-        self.stateAcronym = stateAcronym
-        self.country = country
-    }
     
 }
