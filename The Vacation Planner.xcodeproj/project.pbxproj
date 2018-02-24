@@ -14,6 +14,10 @@
 		B0935CB12041CDDC004E9EAC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0935CAF2041CDDC004E9EAC /* LaunchScreen.storyboard */; };
 		B0935CBC2041CDDC004E9EAC /* The_Vacation_PlannerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0935CBB2041CDDC004E9EAC /* The_Vacation_PlannerTests.swift */; };
 		B0935CC72041CDDC004E9EAC /* The_Vacation_PlannerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0935CC62041CDDC004E9EAC /* The_Vacation_PlannerUITests.swift */; };
+		B0935CDE2041DAC0004E9EAC /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0935CDD2041DAC0004E9EAC /* City.swift */; };
+		B0935CE02041DB16004E9EAC /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0935CDF2041DB16004E9EAC /* Weather.swift */; };
+		B0935CE22041DB6B004E9EAC /* Temperature.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0935CE12041DB6B004E9EAC /* Temperature.swift */; };
+		B0935CE42041DBFB004E9EAC /* WeatherForecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0935CE32041DBFB004E9EAC /* WeatherForecast.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +51,10 @@
 		B0935CC22041CDDC004E9EAC /* The Vacation PlannerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "The Vacation PlannerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0935CC62041CDDC004E9EAC /* The_Vacation_PlannerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = The_Vacation_PlannerUITests.swift; sourceTree = "<group>"; };
 		B0935CC82041CDDC004E9EAC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B0935CDD2041DAC0004E9EAC /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
+		B0935CDF2041DB16004E9EAC /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
+		B0935CE12041DB6B004E9EAC /* Temperature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Temperature.swift; sourceTree = "<group>"; };
+		B0935CE32041DBFB004E9EAC /* WeatherForecast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherForecast.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +105,11 @@
 		B0935CA52041CDDC004E9EAC /* The Vacation Planner */ = {
 			isa = PBXGroup;
 			children = (
+				B0935CD92041D979004E9EAC /* Models */,
+				B0935CD82041D972004E9EAC /* Views */,
+				B0935CDA2041D98E004E9EAC /* Controllers */,
+				B0935CDB2041D99C004E9EAC /* Stores */,
+				B0935CDC2041D9A7004E9EAC /* Helpers */,
 				B0935CA62041CDDC004E9EAC /* AppDelegate.swift */,
 				B0935CA82041CDDC004E9EAC /* ViewController.swift */,
 				B0935CAA2041CDDC004E9EAC /* Main.storyboard */,
@@ -123,6 +136,45 @@
 				B0935CC82041CDDC004E9EAC /* Info.plist */,
 			);
 			path = "The Vacation PlannerUITests";
+			sourceTree = "<group>";
+		};
+		B0935CD82041D972004E9EAC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		B0935CD92041D979004E9EAC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B0935CDD2041DAC0004E9EAC /* City.swift */,
+				B0935CDF2041DB16004E9EAC /* Weather.swift */,
+				B0935CE12041DB6B004E9EAC /* Temperature.swift */,
+				B0935CE32041DBFB004E9EAC /* WeatherForecast.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B0935CDA2041D98E004E9EAC /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		B0935CDB2041D99C004E9EAC /* Stores */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Stores;
+			sourceTree = "<group>";
+		};
+		B0935CDC2041D9A7004E9EAC /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,8 +311,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0935CE02041DB16004E9EAC /* Weather.swift in Sources */,
 				B0935CA92041CDDC004E9EAC /* ViewController.swift in Sources */,
 				B0935CA72041CDDC004E9EAC /* AppDelegate.swift in Sources */,
+				B0935CE42041DBFB004E9EAC /* WeatherForecast.swift in Sources */,
+				B0935CE22041DB6B004E9EAC /* Temperature.swift in Sources */,
+				B0935CDE2041DAC0004E9EAC /* City.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
