@@ -1,5 +1,5 @@
 //
-//  UrlHelper.swift
+//  URLHelper.swift
 //  The Vacation Planner
 //
 //  Created by Roger Silva on 24/02/2018.
@@ -8,26 +8,34 @@
 
 import Foundation
 
-class UrlHelper  {
+enum URLHelperError: Error {
+    case RequestError
+    case HttpStatusError
+    case SerializationJsonError
+}
+
+class URLHelper {
     
-    func startLoad() {
-        let url = URL(string: "http://localhost:8882/cities/")!
+    func startLoad<T>(_ type: T.Type, _ url: String, _ funcSucess: @escaping (T) -> Void,
+                      _ funcError: @escaping (URLHelperError) -> Void) throws where T : Decodable {
+        let url = URL(string: url)!
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
             if let _ = error {
-//                self.handleClientError(error)
+                funcError(URLHelperError.RequestError)
                 return
             }
             guard let httpResponse = response as? HTTPURLResponse,
                 (200...299).contains(httpResponse.statusCode) else {
-//                    self.handleServerError(response)
+                    funcError(URLHelperError.HttpStatusError)
                     return
             }
             if let mimeType = httpResponse.mimeType, mimeType == "application/json",
-                let data = data,
-                let string = String(data: data, encoding: .utf8) {
-                DispatchQueue.main.async {
-                    print(string)
-//                    self.webView.loadHTMLString(string, baseURL: url)
+                let data = data {
+                do {
+                    let objects = try JSONDecoder().decode(type, from: data)
+                    funcSucess(objects)
+                } catch {
+                    funcError(URLHelperError.SerializationJsonError)
                 }
             }
         }
