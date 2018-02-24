@@ -84,6 +84,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B049DC31204228960096EA4F /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				B066FB452042273000FD9235 /* URLHelper.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		B0935C9A2041CDDC004E9EAC = {
 			isa = PBXGroup;
 			children = (
@@ -107,11 +115,8 @@
 		B0935CA52041CDDC004E9EAC /* The Vacation Planner */ = {
 			isa = PBXGroup;
 			children = (
+				B049DC31204228960096EA4F /* Helpers */,
 				B0935CD92041D979004E9EAC /* Models */,
-				B0935CD82041D972004E9EAC /* Views */,
-				B0935CDA2041D98E004E9EAC /* Controllers */,
-				B0935CDB2041D99C004E9EAC /* Stores */,
-				B0935CDC2041D9A7004E9EAC /* Helpers */,
 				B0935CA62041CDDC004E9EAC /* AppDelegate.swift */,
 				B0935CA82041CDDC004E9EAC /* ViewController.swift */,
 				B0935CAA2041CDDC004E9EAC /* Main.storyboard */,
@@ -140,13 +145,6 @@
 			path = "The Vacation PlannerUITests";
 			sourceTree = "<group>";
 		};
-		B0935CD82041D972004E9EAC /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Views;
-			sourceTree = "<group>";
-		};
 		B0935CD92041D979004E9EAC /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -156,28 +154,6 @@
 				B0935CE32041DBFB004E9EAC /* WeatherForecast.swift */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		B0935CDA2041D98E004E9EAC /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Controllers;
-			sourceTree = "<group>";
-		};
-		B0935CDB2041D99C004E9EAC /* Stores */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Stores;
-			sourceTree = "<group>";
-		};
-		B0935CDC2041D9A7004E9EAC /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-				B066FB452042273000FD9235 /* URLHelper.swift */,
-			);
-			name = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
