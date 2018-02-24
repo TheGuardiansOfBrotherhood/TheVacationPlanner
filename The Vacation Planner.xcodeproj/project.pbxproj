@@ -1,0 +1,563 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B0935CA72041CDDC004E9EAC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0935CA62041CDDC004E9EAC /* AppDelegate.swift */; };
+		B0935CA92041CDDC004E9EAC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0935CA82041CDDC004E9EAC /* ViewController.swift */; };
+		B0935CAC2041CDDC004E9EAC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0935CAA2041CDDC004E9EAC /* Main.storyboard */; };
+		B0935CAE2041CDDC004E9EAC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0935CAD2041CDDC004E9EAC /* Assets.xcassets */; };
+		B0935CB12041CDDC004E9EAC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0935CAF2041CDDC004E9EAC /* LaunchScreen.storyboard */; };
+		B0935CBC2041CDDC004E9EAC /* The_Vacation_PlannerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0935CBB2041CDDC004E9EAC /* The_Vacation_PlannerTests.swift */; };
+		B0935CC72041CDDC004E9EAC /* The_Vacation_PlannerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0935CC62041CDDC004E9EAC /* The_Vacation_PlannerUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B0935CB82041CDDC004E9EAC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B0935C9B2041CDDC004E9EAC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B0935CA22041CDDC004E9EAC;
+			remoteInfo = "The Vacation Planner";
+		};
+		B0935CC32041CDDC004E9EAC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B0935C9B2041CDDC004E9EAC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B0935CA22041CDDC004E9EAC;
+			remoteInfo = "The Vacation Planner";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		B0935CA32041CDDC004E9EAC /* The Vacation Planner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "The Vacation Planner.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B0935CA62041CDDC004E9EAC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B0935CA82041CDDC004E9EAC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B0935CAB2041CDDC004E9EAC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B0935CAD2041CDDC004E9EAC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B0935CB02041CDDC004E9EAC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B0935CB22041CDDC004E9EAC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B0935CB72041CDDC004E9EAC /* The Vacation PlannerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "The Vacation PlannerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B0935CBB2041CDDC004E9EAC /* The_Vacation_PlannerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = The_Vacation_PlannerTests.swift; sourceTree = "<group>"; };
+		B0935CBD2041CDDC004E9EAC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B0935CC22041CDDC004E9EAC /* The Vacation PlannerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "The Vacation PlannerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B0935CC62041CDDC004E9EAC /* The_Vacation_PlannerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = The_Vacation_PlannerUITests.swift; sourceTree = "<group>"; };
+		B0935CC82041CDDC004E9EAC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B0935CA02041CDDC004E9EAC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B0935CB42041CDDC004E9EAC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B0935CBF2041CDDC004E9EAC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B0935C9A2041CDDC004E9EAC = {
+			isa = PBXGroup;
+			children = (
+				B0935CA52041CDDC004E9EAC /* The Vacation Planner */,
+				B0935CBA2041CDDC004E9EAC /* The Vacation PlannerTests */,
+				B0935CC52041CDDC004E9EAC /* The Vacation PlannerUITests */,
+				B0935CA42041CDDC004E9EAC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B0935CA42041CDDC004E9EAC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B0935CA32041CDDC004E9EAC /* The Vacation Planner.app */,
+				B0935CB72041CDDC004E9EAC /* The Vacation PlannerTests.xctest */,
+				B0935CC22041CDDC004E9EAC /* The Vacation PlannerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B0935CA52041CDDC004E9EAC /* The Vacation Planner */ = {
+			isa = PBXGroup;
+			children = (
+				B0935CA62041CDDC004E9EAC /* AppDelegate.swift */,
+				B0935CA82041CDDC004E9EAC /* ViewController.swift */,
+				B0935CAA2041CDDC004E9EAC /* Main.storyboard */,
+				B0935CAD2041CDDC004E9EAC /* Assets.xcassets */,
+				B0935CAF2041CDDC004E9EAC /* LaunchScreen.storyboard */,
+				B0935CB22041CDDC004E9EAC /* Info.plist */,
+			);
+			path = "The Vacation Planner";
+			sourceTree = "<group>";
+		};
+		B0935CBA2041CDDC004E9EAC /* The Vacation PlannerTests */ = {
+			isa = PBXGroup;
+			children = (
+				B0935CBB2041CDDC004E9EAC /* The_Vacation_PlannerTests.swift */,
+				B0935CBD2041CDDC004E9EAC /* Info.plist */,
+			);
+			path = "The Vacation PlannerTests";
+			sourceTree = "<group>";
+		};
+		B0935CC52041CDDC004E9EAC /* The Vacation PlannerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				B0935CC62041CDDC004E9EAC /* The_Vacation_PlannerUITests.swift */,
+				B0935CC82041CDDC004E9EAC /* Info.plist */,
+			);
+			path = "The Vacation PlannerUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B0935CA22041CDDC004E9EAC /* The Vacation Planner */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B0935CCB2041CDDC004E9EAC /* Build configuration list for PBXNativeTarget "The Vacation Planner" */;
+			buildPhases = (
+				B0935C9F2041CDDC004E9EAC /* Sources */,
+				B0935CA02041CDDC004E9EAC /* Frameworks */,
+				B0935CA12041CDDC004E9EAC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "The Vacation Planner";
+			productName = "The Vacation Planner";
+			productReference = B0935CA32041CDDC004E9EAC /* The Vacation Planner.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B0935CB62041CDDC004E9EAC /* The Vacation PlannerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B0935CCE2041CDDC004E9EAC /* Build configuration list for PBXNativeTarget "The Vacation PlannerTests" */;
+			buildPhases = (
+				B0935CB32041CDDC004E9EAC /* Sources */,
+				B0935CB42041CDDC004E9EAC /* Frameworks */,
+				B0935CB52041CDDC004E9EAC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B0935CB92041CDDC004E9EAC /* PBXTargetDependency */,
+			);
+			name = "The Vacation PlannerTests";
+			productName = "The Vacation PlannerTests";
+			productReference = B0935CB72041CDDC004E9EAC /* The Vacation PlannerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		B0935CC12041CDDC004E9EAC /* The Vacation PlannerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B0935CD12041CDDC004E9EAC /* Build configuration list for PBXNativeTarget "The Vacation PlannerUITests" */;
+			buildPhases = (
+				B0935CBE2041CDDC004E9EAC /* Sources */,
+				B0935CBF2041CDDC004E9EAC /* Frameworks */,
+				B0935CC02041CDDC004E9EAC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B0935CC42041CDDC004E9EAC /* PBXTargetDependency */,
+			);
+			name = "The Vacation PlannerUITests";
+			productName = "The Vacation PlannerUITests";
+			productReference = B0935CC22041CDDC004E9EAC /* The Vacation PlannerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B0935C9B2041CDDC004E9EAC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = "Infinity Technology";
+				TargetAttributes = {
+					B0935CA22041CDDC004E9EAC = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					B0935CB62041CDDC004E9EAC = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = B0935CA22041CDDC004E9EAC;
+					};
+					B0935CC12041CDDC004E9EAC = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = B0935CA22041CDDC004E9EAC;
+					};
+				};
+			};
+			buildConfigurationList = B0935C9E2041CDDC004E9EAC /* Build configuration list for PBXProject "The Vacation Planner" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B0935C9A2041CDDC004E9EAC;
+			productRefGroup = B0935CA42041CDDC004E9EAC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B0935CA22041CDDC004E9EAC /* The Vacation Planner */,
+				B0935CB62041CDDC004E9EAC /* The Vacation PlannerTests */,
+				B0935CC12041CDDC004E9EAC /* The Vacation PlannerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B0935CA12041CDDC004E9EAC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B0935CB12041CDDC004E9EAC /* LaunchScreen.storyboard in Resources */,
+				B0935CAE2041CDDC004E9EAC /* Assets.xcassets in Resources */,
+				B0935CAC2041CDDC004E9EAC /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B0935CB52041CDDC004E9EAC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B0935CC02041CDDC004E9EAC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B0935C9F2041CDDC004E9EAC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B0935CA92041CDDC004E9EAC /* ViewController.swift in Sources */,
+				B0935CA72041CDDC004E9EAC /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B0935CB32041CDDC004E9EAC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B0935CBC2041CDDC004E9EAC /* The_Vacation_PlannerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B0935CBE2041CDDC004E9EAC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B0935CC72041CDDC004E9EAC /* The_Vacation_PlannerUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B0935CB92041CDDC004E9EAC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B0935CA22041CDDC004E9EAC /* The Vacation Planner */;
+			targetProxy = B0935CB82041CDDC004E9EAC /* PBXContainerItemProxy */;
+		};
+		B0935CC42041CDDC004E9EAC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B0935CA22041CDDC004E9EAC /* The Vacation Planner */;
+			targetProxy = B0935CC32041CDDC004E9EAC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		B0935CAA2041CDDC004E9EAC /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B0935CAB2041CDDC004E9EAC /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		B0935CAF2041CDDC004E9EAC /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B0935CB02041CDDC004E9EAC /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B0935CC92041CDDC004E9EAC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		B0935CCA2041CDDC004E9EAC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B0935CCC2041CDDC004E9EAC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 75PMHM9PJZ;
+				INFOPLIST_FILE = "The Vacation Planner/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "infinity.technology.The-Vacation-Planner";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B0935CCD2041CDDC004E9EAC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 75PMHM9PJZ;
+				INFOPLIST_FILE = "The Vacation Planner/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "infinity.technology.The-Vacation-Planner";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		B0935CCF2041CDDC004E9EAC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 75PMHM9PJZ;
+				INFOPLIST_FILE = "The Vacation PlannerTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "infinity.technology.The-Vacation-PlannerTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/The Vacation Planner.app/The Vacation Planner";
+			};
+			name = Debug;
+		};
+		B0935CD02041CDDC004E9EAC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 75PMHM9PJZ;
+				INFOPLIST_FILE = "The Vacation PlannerTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "infinity.technology.The-Vacation-PlannerTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/The Vacation Planner.app/The Vacation Planner";
+			};
+			name = Release;
+		};
+		B0935CD22041CDDC004E9EAC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 75PMHM9PJZ;
+				INFOPLIST_FILE = "The Vacation PlannerUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "infinity.technology.The-Vacation-PlannerUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "The Vacation Planner";
+			};
+			name = Debug;
+		};
+		B0935CD32041CDDC004E9EAC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 75PMHM9PJZ;
+				INFOPLIST_FILE = "The Vacation PlannerUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "infinity.technology.The-Vacation-PlannerUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "The Vacation Planner";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B0935C9E2041CDDC004E9EAC /* Build configuration list for PBXProject "The Vacation Planner" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B0935CC92041CDDC004E9EAC /* Debug */,
+				B0935CCA2041CDDC004E9EAC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B0935CCB2041CDDC004E9EAC /* Build configuration list for PBXNativeTarget "The Vacation Planner" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B0935CCC2041CDDC004E9EAC /* Debug */,
+				B0935CCD2041CDDC004E9EAC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B0935CCE2041CDDC004E9EAC /* Build configuration list for PBXNativeTarget "The Vacation PlannerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B0935CCF2041CDDC004E9EAC /* Debug */,
+				B0935CD02041CDDC004E9EAC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B0935CD12041CDDC004E9EAC /* Build configuration list for PBXNativeTarget "The Vacation PlannerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B0935CD22041CDDC004E9EAC /* Debug */,
+				B0935CD32041CDDC004E9EAC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B0935C9B2041CDDC004E9EAC /* Project object */;
+}
