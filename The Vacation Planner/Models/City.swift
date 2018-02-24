@@ -9,11 +9,19 @@
 import Foundation
 
 struct City : Decodable {
-    
+
     var woeid: String
     var district: String
     var province: String
     var stateAcronym: String
     var country: String
-    
+
+    enum CodingKeys: String, CodingKey {
+        case woeid
+        case district
+        case province
+        case stateAcronym = "state_acronym"
+        case country
+    }
+
 }

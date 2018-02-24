@@ -24,23 +24,22 @@ class ViewController: UIViewController {
     func startLoad() {
         let url = URL(string: "http://localhost:8882/cities/")!
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
-            if let _ = error {
-//                self.handleClientError(error)
-                print("error")
+            if let error = error {
+                print("Error requesting", error)
                 return
             }
             guard let httpResponse = response as? HTTPURLResponse,
                 (200...299).contains(httpResponse.statusCode) else {
-//                    self.handleServerError(response)
-                    print("http-error")
+                    print("Http status error")
                     return
             }
             if let mimeType = httpResponse.mimeType, mimeType == "application/json",
-                let data = data,
-                let string = String(data: data, encoding: .utf8) {
-                DispatchQueue.main.async {
-                    print(string)
-//                    self.webView.loadHTMLString(string, baseURL: url)
+                let data = data {
+                do {
+                    let cities = try JSONDecoder().decode([City].self, from: data)
+                    print(cities)
+                } catch let jsonError {
+                    print("Error serializing json", jsonError)
                 }
             }
         }
