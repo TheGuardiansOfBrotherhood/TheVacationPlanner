@@ -9,8 +9,8 @@
 import Foundation
 
 struct Weather : Decodable {
-    
+
     var id: String
     var name: String
-    
+
 }

@@ -9,10 +9,10 @@
 import Foundation
 
 struct WeatherForecast : Decodable {
-    
+
     var date: String
     var temperature: Temperature
     var weather: String
     var woeid: String
-    
+
 }

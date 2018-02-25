@@ -9,9 +9,9 @@
 import Foundation
 
 struct Temperature : Decodable {
-    
+
     var max: Int
     var min: Int
     var unit: String
-    
+
 }

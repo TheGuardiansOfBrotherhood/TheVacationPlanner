@@ -15,7 +15,7 @@ enum URLHelperError: Error {
 }
 
 class URLHelper {
-    
+
     func startLoad<T>(_ type: T.Type, _ url: String, _ funcSucess: @escaping (T) -> Void,
                       _ funcError: @escaping (URLHelperError) -> Void) throws where T : Decodable {
         let url = URL(string: url)!
@@ -41,5 +41,5 @@ class URLHelper {
         }
         task.resume()
     }
-    
+
 }
