@@ -9,7 +9,8 @@
 import UIKit
 
 class Data {
-    var array: [String] = []
+    var total: Int = 0
+    var checkedIds: [String] = []
 }
 
 class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITableViewDelegate, UITableViewDataSource {
@@ -17,6 +18,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     @IBOutlet weak var dayField: UITextField!
     @IBOutlet weak var cityField: UITextField!
     @IBOutlet weak var weatherTableView: UITableView!
+
     
     var data = Data()
 
@@ -30,8 +32,6 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        data.array = ["some data"]
         
         dayPickerView.delegate = self
         dayPickerView.dataSource = self

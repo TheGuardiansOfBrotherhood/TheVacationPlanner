@@ -21,8 +21,6 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        data.array = ["data has changed!"]
 
         weatherTableView.delegate = self
         weatherTableView.dataSource = self
@@ -42,6 +40,7 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        data.total = weather.count
         return weather.count
     }
 
@@ -52,6 +51,9 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
         if weatherSelected.contains(where: {$0.id == weather[selectedIndex].id})  {
             cell.weatherSwitch.setOn(true, animated: true)
         }
+    
+        cell.weatherSwitch.restorationIdentifier = String(weather[selectedIndex].id)
+
         return cell
     }
     
@@ -76,5 +78,15 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
             self.activityIndicator.stopAnimating()
         }
     }
+    
+    
+    @IBAction func onChangeItem(_ sender: UISwitch) {
+        let id:String = sender.restorationIdentifier!
 
+        if sender.isOn {
+            data.checkedIds.append(id)
+        } else {
+            data.checkedIds = data.checkedIds.filter() {$0 != id}
+        }
+    }
 }
