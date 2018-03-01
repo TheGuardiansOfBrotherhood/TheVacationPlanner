@@ -16,9 +16,13 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
 
     var weather: [Weather] = Array()
     var weatherSelected: [Weather] = Array()
+    
+    var data = Data()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        data.array = ["data has changed!"]
 
         weatherTableView.delegate = self
         weatherTableView.dataSource = self

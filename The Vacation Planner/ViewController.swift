@@ -8,11 +8,17 @@
 
 import UIKit
 
+class Data {
+    var array: [String] = []
+}
+
 class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var dayField: UITextField!
     @IBOutlet weak var cityField: UITextField!
     @IBOutlet weak var weatherTableView: UITableView!
+    
+    var data = Data()
 
     let days: [Int] = Array(1...30)
     var cities: [City] = Array()
@@ -24,6 +30,9 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        data.array = ["some data"]
+        
         dayPickerView.delegate = self
         dayPickerView.dataSource = self
         dayPickerView.tag = 0
@@ -103,9 +112,10 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if let destination = segue.destination as? WeatherViewController {
-//            destination.weatherSelected =
-//        }
+        if segue.identifier == "showWeather" {
+            let destination = segue.destination as! WeatherViewController
+            destination.data = data
+        }
     }
 
     func funcSucess(cities: [City])  {
