@@ -32,7 +32,7 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
             activityIndicator.startAnimating()
             try URLHelper().startLoad([Weather].self, "http://localhost:8882/weather/", funcSucess, funcError)
         } catch {
-            print("Error City not is Decodable")
+            print("Error Weather not is Decodable")
             activityIndicator.stopAnimating()
         }
     }

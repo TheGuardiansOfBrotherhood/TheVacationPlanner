@@ -13,20 +13,65 @@ class Data {
 }
 
 class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITableViewDelegate, UITableViewDataSource {
-    
+
     @IBOutlet weak var dayField: UITextField!
     @IBOutlet weak var cityField: UITextField!
     @IBOutlet weak var weatherTableView: UITableView!
 
-    let days: [Int] = Array(1...30)
+    let days: [Int] = [10, 15, 20, 30]
     var cities: [City] = Array()
-    var titles: [String] = ["Clima"]
-    var data = Data()
+    let titles: [String] = ["Clima"]
+    let data = Data()
+    var weatherForecast: [WeatherForecast] = Array()
+    var day: Int = 15
+    var city: City? = nil
+    var periods: [[WeatherForecast]] = Array()
 
     var dayPickerView: UIPickerView = UIPickerView()
     var cityPickerView: UIPickerView = UIPickerView()
     var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
-    
+
+    @IBAction func SearchWeatherForecast(_ sender: Any) {
+        if let city = self.city {
+            do {
+                activityIndicator.startAnimating()
+                try URLHelper().startLoad([WeatherForecast].self, "http://localhost:8882/cities/\(city.woeid)/year/2018/", funcSucessWeatherForecast, funcError)
+            } catch {
+                print("Error WeatherForecast not is Decodable")
+                activityIndicator.stopAnimating()
+            }
+        } else {
+            print("Error select city")
+        }
+    }
+
+    func funcSucessWeatherForecast(weatherForecast: [WeatherForecast])  {
+        DispatchQueue.main.async {
+            self.weatherForecast = weatherForecast.filter({ (item) -> Bool in
+                self.data.weather.contains(where: { $0.name == item.weather})
+            })
+
+            let formatter = DateFormatter()
+            formatter.dateFormat = "yyyy-MM-dd"
+
+            var after: WeatherForecast? = nil
+            var elements: [WeatherForecast] = Array()
+            self.weatherForecast.forEach({ (item) in
+                if let after = after {
+                    if formatter.date(from: item.date) != formatter.date(from: after.date)?.addingTimeInterval(86400) {
+                        self.periods.append(elements)
+                        elements = Array()
+                    }
+                }
+                elements.append(item)
+                after = item
+            })
+            self.periods.append(elements)
+
+            self.activityIndicator.stopAnimating()
+        }
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -56,7 +101,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
 
         do {
             activityIndicator.startAnimating()
-            try URLHelper().startLoad([City].self, "http://localhost:8882/cities/", funcSucess, funcError)
+            try URLHelper().startLoad([City].self, "http://localhost:8882/cities/", funcSucessCities, funcError)
         } catch {
             print("Error City not is Decodable")
             activityIndicator.stopAnimating()
@@ -87,9 +132,11 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
 
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if (pickerView.tag == 0) {
+            day = days[row]
             dayField.text = "\(days[row])"
             dayField.resignFirstResponder()
         } else if (pickerView.tag == 1) {
+            city = cities[row]
             cityField.text = "\(cities[row].district) - \(cities[row].stateAcronym.localizedUppercase)"
             cityField.resignFirstResponder()
         }
@@ -122,7 +169,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         weatherTableView.reloadData()
     }
 
-    func funcSucess(cities: [City])  {
+    func funcSucessCities(cities: [City])  {
         DispatchQueue.main.async {
             self.cities = cities
             self.activityIndicator.stopAnimating()
