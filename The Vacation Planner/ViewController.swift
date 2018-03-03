@@ -9,8 +9,7 @@
 import UIKit
 
 class Data {
-    var total: Int = 0
-    var checkedIds: [String] = []
+    var weather: [Weather] = Array()
 }
 
 class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITableViewDelegate, UITableViewDataSource {
@@ -19,12 +18,10 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     @IBOutlet weak var cityField: UITextField!
     @IBOutlet weak var weatherTableView: UITableView!
 
-    
-    var data = Data()
-
     let days: [Int] = Array(1...30)
     var cities: [City] = Array()
-    var weathers: [String] = ["Clima"]
+    var titles: [String] = ["Clima"]
+    var data = Data()
 
     var dayPickerView: UIPickerView = UIPickerView()
     var cityPickerView: UIPickerView = UIPickerView()
@@ -56,6 +53,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
 
         weatherTableView.delegate = self
         weatherTableView.dataSource = self
+
         do {
             activityIndicator.startAnimating()
             try URLHelper().startLoad([City].self, "http://localhost:8882/cities/", funcSucess, funcError)
@@ -86,7 +84,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         }
         return ""
     }
-    
+
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if (pickerView.tag == 0) {
             dayField.text = "\(days[row])"
@@ -96,14 +94,15 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             cityField.resignFirstResponder()
         }
     }
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return weathers.count
+        return titles.count
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = weatherTableView.dequeueReusableCell(withIdentifier: "cell")
-        cell?.textLabel?.text = weathers[indexPath.row].capitalized
+        cell?.textLabel?.text = titles[indexPath.row].capitalized
+        cell?.detailTextLabel?.text = String(data.weather.count)
         return cell!
     }
 
@@ -113,9 +112,14 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showWeather" {
-            let destination = segue.destination as! WeatherViewController
-            destination.data = data
+            if let destination = segue.destination as? WeatherViewController {
+                destination.data = data
+            }
         }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        weatherTableView.reloadData()
     }
 
     func funcSucess(cities: [City])  {

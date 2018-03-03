@@ -15,8 +15,6 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
     var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
 
     var weather: [Weather] = Array()
-    var weatherSelected: [Weather] = Array()
-    
     var data = Data()
 
     override func viewDidLoad() {
@@ -40,7 +38,6 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        data.total = weather.count
         return weather.count
     }
 
@@ -48,12 +45,12 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
         let selectedIndex = indexPath.row
         let cell = weatherTableView.dequeueReusableCell(withIdentifier: "weatherCell") as! WeatherTableViewCell
         cell.weatherLabel.text = weather[selectedIndex].name.capitalized
-        if weatherSelected.contains(where: {$0.id == weather[selectedIndex].id})  {
+        cell.weatherSwitch.tag = selectedIndex
+        if data.weather.contains(where: {$0.id == weather[selectedIndex].id})  {
             cell.weatherSwitch.setOn(true, animated: true)
+        } else {
+            cell.weatherSwitch.setOn(false, animated: true)
         }
-    
-        cell.weatherSwitch.restorationIdentifier = String(weather[selectedIndex].id)
-
         return cell
     }
     
@@ -78,15 +75,14 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
             self.activityIndicator.stopAnimating()
         }
     }
-    
-    
-    @IBAction func onChangeItem(_ sender: UISwitch) {
-        let id:String = sender.restorationIdentifier!
 
+    @IBAction func onChangeItem(_ sender: UISwitch) {
+        let index: Int = sender.tag
         if sender.isOn {
-            data.checkedIds.append(id)
+            data.weather.append(weather[index])
         } else {
-            data.checkedIds = data.checkedIds.filter() {$0 != id}
+            data.weather = data.weather.filter() {$0.id != weather[index].id}
         }
     }
+
 }
