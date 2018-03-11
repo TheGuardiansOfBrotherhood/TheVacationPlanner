@@ -17,6 +17,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     @IBOutlet weak var dayField: UITextField!
     @IBOutlet weak var cityField: UITextField!
     @IBOutlet weak var weatherTableView: UITableView!
+    @IBOutlet weak var periodsTableView: UITableView!
 
     let days: [Int] = [10, 15, 20, 30]
     var cities: [City] = Array()
@@ -26,12 +27,15 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     var day: Int = 15
     var city: City? = nil
     var periods: [[WeatherForecast]] = Array()
+    let formatter = DateFormatter()
 
     var dayPickerView: UIPickerView = UIPickerView()
     var cityPickerView: UIPickerView = UIPickerView()
     var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
 
     @IBAction func SearchWeatherForecast(_ sender: Any) {
+        periods = Array()
+        periodsTableView.reloadData()
         if let city = self.city {
             do {
                 activityIndicator.startAnimating()
@@ -51,14 +55,13 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                 self.data.weather.contains(where: { $0.name == item.weather})
             })
 
-            let formatter = DateFormatter()
-            formatter.dateFormat = "yyyy-MM-dd"
+            self.formatter.dateFormat = "yyyy-MM-dd"
 
             var after: WeatherForecast? = nil
             var elements: [WeatherForecast] = Array()
             self.weatherForecast.forEach({ (item) in
                 if let after = after {
-                    if formatter.date(from: item.date) != formatter.date(from: after.date)?.addingTimeInterval(86400) {
+                    if self.formatter.date(from: item.date) != self.formatter.date(from: after.date)?.addingTimeInterval(86400) {
                         self.periods.append(elements)
                         elements = Array()
                     }
@@ -67,6 +70,12 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                 after = item
             })
             self.periods.append(elements)
+            
+            self.periods = self.periods.filter({ (item) -> Bool in
+                item.count >= self.day
+            })
+
+            self.periodsTableView.reloadData()
 
             self.activityIndicator.stopAnimating()
         }
@@ -74,7 +83,9 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
+        formatter.locale = Locale(identifier: "pt_BR")
+
         dayPickerView.delegate = self
         dayPickerView.dataSource = self
         dayPickerView.tag = 0
@@ -98,6 +109,11 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
 
         weatherTableView.delegate = self
         weatherTableView.dataSource = self
+        weatherTableView.tag = 0
+
+        periodsTableView.delegate = self
+        periodsTableView.dataSource = self
+        periodsTableView.tag = 1
 
         do {
             activityIndicator.startAnimating()
@@ -143,18 +159,43 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return titles.count
+        if (tableView.tag == 0) {
+            return titles.count
+        } else if (tableView.tag == 1) {
+            return periods.count
+        }
+        return 0
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = weatherTableView.dequeueReusableCell(withIdentifier: "cell")
-        cell?.textLabel?.text = titles[indexPath.row].capitalized
-        cell?.detailTextLabel?.text = String(data.weather.count)
-        return cell!
+        if (tableView.tag == 0) {
+            let cell = weatherTableView.dequeueReusableCell(withIdentifier: "cell")
+            cell?.textLabel?.text = titles[indexPath.row].capitalized
+            cell?.detailTextLabel?.text = String(data.weather.count)
+            return cell!
+        } else if (tableView.tag == 1) {
+            let cell = periodsTableView.dequeueReusableCell(withIdentifier: "periodCell")
+            if let initial = periods[indexPath.row].first?.date,
+                let final = periods[indexPath.row].last?.date {
+
+                formatter.dateFormat = "yyyy-MM-dd"
+                let initialDate = formatter.date(from: initial)
+                let finalDate = formatter.date(from: final)
+
+                formatter.dateFormat = "dd 'de' MMMM"
+                let initialDateString = formatter.string(from: initialDate!)
+                let finalDateString = formatter.string(from: finalDate!)
+                cell?.textLabel?.text = "De \(initialDateString) a \(finalDateString)"
+            }
+            return cell!
+        }
+        return UITableViewCell()
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "showWeather", sender: self)
+        if (tableView.tag == 0) {
+            performSegue(withIdentifier: "showWeather", sender: self)
+        }
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
