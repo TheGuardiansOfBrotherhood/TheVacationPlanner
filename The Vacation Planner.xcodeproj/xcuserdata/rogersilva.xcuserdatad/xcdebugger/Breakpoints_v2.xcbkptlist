@@ -23,28 +23,12 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "The Vacation Planner/ViewController.swift"
-            timestampString = "542490433.366591"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "22"
-            endingLineNumber = "22"
-            landmarkName = "ViewController"
-            landmarkType = "3">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "The Vacation Planner/WeatherViewController.swift"
-            timestampString = "541799572.036594"
+            timestampString = "544814837.172322"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
             landmarkName = "tableView(_:numberOfRowsInSection:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -56,11 +40,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "The Vacation Planner/WeatherViewController.swift"
-            timestampString = "541799572.036654"
+            timestampString = "544814837.172381"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "81"
-            endingLineNumber = "81"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
             landmarkName = "onChangeItem(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -72,11 +56,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "The Vacation Planner/WeatherViewController.swift"
-            timestampString = "541799572.036703"
+            timestampString = "544814837.172426"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "45"
-            endingLineNumber = "45"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -88,12 +72,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "The Vacation Planner/ViewController.swift"
-            timestampString = "542490433.3670371"
+            timestampString = "544814837.172469"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "201"
-            endingLineNumber = "201"
-            landmarkName = "prepare(for:sender:)"
+            startingLineNumber = "208"
+            endingLineNumber = "208"
+            landmarkName = "tableView(_:didSelectRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -104,27 +88,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "The Vacation Planner/ViewController.swift"
-            timestampString = "542490433.3673151"
+            timestampString = "544814837.172827"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "209"
-            endingLineNumber = "209"
-            landmarkName = "viewWillAppear(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "The Vacation Planner/ViewController.swift"
-            timestampString = "542490433.367622"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "54"
-            endingLineNumber = "54"
+            startingLineNumber = "93"
+            endingLineNumber = "93"
             landmarkName = "funcSucessWeatherForecast(weatherForecast:)"
             landmarkType = "7">
             <Locations>
@@ -168,12 +136,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "The Vacation Planner/ViewController.swift"
-            timestampString = "542490433.367866"
+            timestampString = "544814837.173093"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "79"
-            endingLineNumber = "79"
-            landmarkName = "funcSucessWeatherForecast(weatherForecast:)"
+            startingLineNumber = "184"
+            endingLineNumber = "184"
+            landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -184,12 +152,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "The Vacation Planner/ViewController.swift"
-            timestampString = "542490433.368111"
+            timestampString = "544814837.173355"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "79"
-            endingLineNumber = "79"
-            landmarkName = "funcSucessWeatherForecast(weatherForecast:)"
+            startingLineNumber = "192"
+            endingLineNumber = "192"
+            landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -199,76 +167,44 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "The Vacation Planner/ViewController.swift"
-            timestampString = "542490433.368354"
+            filePath = "The Vacation Planner/WeatherViewController.swift"
+            timestampString = "544814837.173615"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "64"
-            endingLineNumber = "64"
-            landmarkName = "funcSucessWeatherForecast(weatherForecast:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "The Vacation Planner/ViewController.swift"
-            timestampString = "542490433.3686"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "80"
-            endingLineNumber = "80"
-            landmarkName = "funcSucessWeatherForecast(weatherForecast:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "The Vacation Planner/ViewController.swift"
-            timestampString = "542490433.36884"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "74"
-            endingLineNumber = "74"
-            landmarkName = "funcSucessWeatherForecast(weatherForecast:)"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
+            landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
             <Locations>
                <Location
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 () -&gt; () in The_Vacation_Planner.ViewController.funcSucessWeatherForecast(weatherForecast: Swift.Array&lt;The_Vacation_Planner.WeatherForecast&gt;) -&gt; ()"
+                  symbolName = "The_Vacation_Planner.WeatherViewController.tableView(__ObjC.UITableView, cellForRowAt: Foundation.IndexPath) -&gt; __ObjC.UITableViewCell"
                   moduleName = "The Vacation Planner"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/rogersilva/Desktop/The%20Vacation%20Planner/The%20Vacation%20Planner/ViewController.swift"
-                  timestampString = "542485136.714625"
+                  urlString = "file:///Users/rogersilva/Desktop/The%20Vacation%20Planner/The%20Vacation%20Planner/WeatherViewController.swift"
+                  timestampString = "544798839.125221"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "72"
-                  endingLineNumber = "72"
-                  offsetFromSymbolStart = "1226">
+                  startingLineNumber = "49"
+                  endingLineNumber = "49"
+                  offsetFromSymbolStart = "1460">
                </Location>
                <Location
                   shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #3 (Swift.Array&lt;The_Vacation_Planner.WeatherForecast&gt;) -&gt; Swift.Bool in closure #1 () -&gt; () in The_Vacation_Planner.ViewController.funcSucessWeatherForecast(weatherForecast: Swift.Array&lt;The_Vacation_Planner.WeatherForecast&gt;) -&gt; ()"
+                  symbolName = "closure #1 (The_Vacation_Planner.Weather) -&gt; Swift.Bool in The_Vacation_Planner.WeatherViewController.tableView(__ObjC.UITableView, cellForRowAt: Foundation.IndexPath) -&gt; __ObjC.UITableViewCell"
                   moduleName = "The Vacation Planner"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/rogersilva/Desktop/The%20Vacation%20Planner/The%20Vacation%20Planner/ViewController.swift"
-                  timestampString = "542485136.716987"
+                  urlString = "file:///Users/rogersilva/Desktop/The%20Vacation%20Planner/The%20Vacation%20Planner/WeatherViewController.swift"
+                  timestampString = "544798839.12863"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "73"
-                  endingLineNumber = "73"
-                  offsetFromSymbolStart = "18">
+                  startingLineNumber = "49"
+                  endingLineNumber = "49"
+                  offsetFromSymbolStart = "68">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -280,12 +216,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "The Vacation Planner/ViewController.swift"
-            timestampString = "542490433.369074"
+            timestampString = "544814837.17366"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "177"
-            endingLineNumber = "177"
-            landmarkName = "tableView(_:cellForRowAt:)"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "SearchWeatherForecast(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -296,12 +232,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "The Vacation Planner/ViewController.swift"
-            timestampString = "542490433.369306"
+            timestampString = "544814837.173907"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "185"
-            endingLineNumber = "185"
-            landmarkName = "tableView(_:cellForRowAt:)"
+            startingLineNumber = "131"
+            endingLineNumber = "131"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "The Vacation Planner/Helpers/URLHelper.swift"
+            timestampString = "544810574.533245"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
+            landmarkName = "startLoad(_:_:_:_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

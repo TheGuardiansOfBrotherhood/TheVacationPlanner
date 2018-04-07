@@ -16,6 +16,7 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
 
     var weather: [Weather] = Array()
     var data = Data()
+    let weatherURL = PListHelper().getInfo(key: "weather")
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,9 +31,9 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
 
         do {
             activityIndicator.startAnimating()
-            try URLHelper().startLoad([Weather].self, "http://localhost:8882/weather/", funcSucess, funcError)
+            try NetworkingHelper().startLoad([Weather].self, "\(weatherURL)", funcSucess, funcError)
         } catch {
-            print("Error Weather not is Decodable")
+            self.funcAlert(alertMessage: "Error Weather not is Decodable")
             activityIndicator.stopAnimating()
         }
     }
@@ -62,15 +63,15 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
     }
 
-    func funcError(error: URLHelperError)  {
+    func funcError(error: NetworkingHelperError)  {
         DispatchQueue.main.async {
             switch error {
-            case URLHelperError.RequestError:
-                print("Error requesting")
-            case URLHelperError.HttpStatusError:
-                print("Error HTTP Status")
-            case URLHelperError.SerializationJsonError:
-                print("Error serialization JSON")
+            case NetworkingHelperError.RequestError:
+                self.funcAlert(alertMessage: "Error requesting")
+            case NetworkingHelperError.HttpStatusError:
+                self.funcAlert(alertMessage: "Error HTTP Status")
+            case NetworkingHelperError.SerializationJsonError:
+                self.funcAlert(alertMessage: "Error serialization JSON")
             }
             self.activityIndicator.stopAnimating()
         }
@@ -83,6 +84,13 @@ class WeatherViewController: UIViewController, UITableViewDelegate, UITableViewD
         } else {
             data.weather = data.weather.filter() {$0.id != weather[index].id}
         }
+    }
+    
+    func funcAlert(alertMessage : String) {
+        let alert = UIAlertController(title: "Alert", message: alertMessage, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
+        }))
+        self.present(alert, animated: true, completion: nil)
     }
 
 }

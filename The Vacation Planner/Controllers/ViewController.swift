@@ -28,6 +28,8 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     var city: City? = nil
     var periods: [[WeatherForecast]] = Array()
     let formatter = DateFormatter()
+    let citiesURL = PListHelper().getInfo(key: "cities")
+    let weatherForecastURL = PListHelper().getInfo(key: "weatherForecast")
 
     var dayPickerView: UIPickerView = UIPickerView()
     var cityPickerView: UIPickerView = UIPickerView()
@@ -39,26 +41,32 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         if let city = self.city {
             do {
                 activityIndicator.startAnimating()
-                try URLHelper().startLoad([WeatherForecast].self, "http://localhost:8882/cities/\(city.woeid)/year/2018/", funcSucessWeatherForecast, funcError)
+                let date = Date()
+                let calendar = Calendar.current
+                let components = calendar.dateComponents([.year], from: date)
+                var finalURL = weatherForecastURL.replacingOccurrences(of: "{cityId}", with: "\(city.woeid)")
+                finalURL = finalURL.replacingOccurrences(of: "{year}", with: "\(components.year!)")
+                try NetworkingHelper().startLoad([WeatherForecast].self, "\(finalURL)", funcSucessWeatherForecast, funcError)
             } catch {
-                print("Error WeatherForecast not is Decodable")
+                self.funcAlert(alertMessage: "Error WeatherForecast not is Decodable")
                 activityIndicator.stopAnimating()
             }
         } else {
-            print("Error select city")
+            self.funcAlert(alertMessage: "Error select city")
         }
     }
 
     func funcSucessWeatherForecast(weatherForecast: [WeatherForecast])  {
-        DispatchQueue.main.async {
+        if (!self.data.weather.isEmpty) {
             self.weatherForecast = weatherForecast.filter({ (item) -> Bool in
                 self.data.weather.contains(where: { $0.name == item.weather})
             })
-
+            
             self.formatter.dateFormat = "yyyy-MM-dd"
-
+            
             var after: WeatherForecast? = nil
             var elements: [WeatherForecast] = Array()
+            
             self.weatherForecast.forEach({ (item) in
                 if let after = after {
                     if self.formatter.date(from: item.date) != self.formatter.date(from: after.date)?.addingTimeInterval(86400) {
@@ -74,9 +82,16 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             self.periods = self.periods.filter({ (item) -> Bool in
                 item.count >= self.day
             })
+            
+            if (self.periods.isEmpty) {
+                self.funcAlert(alertMessage: "Error no period found")
+            }
+        } else {
+            self.funcAlert(alertMessage: "Error select weather")
+        }
 
+        DispatchQueue.main.async {
             self.periodsTableView.reloadData()
-
             self.activityIndicator.stopAnimating()
         }
     }
@@ -95,12 +110,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         cityPickerView.tag = 1
 
         dayField.inputView = dayPickerView
-        dayField.textAlignment = .center
-        dayField.placeholder = "Selecione quantidade de dias"
-
         cityField.inputView = cityPickerView
-        cityField.textAlignment = .center
-        cityField.placeholder = "Selecione a cidade"
         
         activityIndicator.center = self.view.center
         activityIndicator.hidesWhenStopped = true
@@ -117,9 +127,9 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
 
         do {
             activityIndicator.startAnimating()
-            try URLHelper().startLoad([City].self, "http://localhost:8882/cities/", funcSucessCities, funcError)
+            try NetworkingHelper().startLoad([City].self, "\(citiesURL)", funcSucessCities, funcError)
         } catch {
-            print("Error City not is Decodable")
+            self.funcAlert(alertMessage: "Error City not is Decodable")
             activityIndicator.stopAnimating()
         }
     }
@@ -217,18 +227,25 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         }
     }
 
-    func funcError(error: URLHelperError)  {
+    func funcError(error: NetworkingHelperError)  {
         DispatchQueue.main.async {
             switch error {
-            case URLHelperError.RequestError:
-                print("Error requesting")
-            case URLHelperError.HttpStatusError:
-                print("Error HTTP Status")
-            case URLHelperError.SerializationJsonError:
-                print("Error serialization JSON")
+            case NetworkingHelperError.RequestError:
+                self.funcAlert(alertMessage: "Error requesting")
+            case NetworkingHelperError.HttpStatusError:
+                self.funcAlert(alertMessage: "Error HTTP Status")
+            case NetworkingHelperError.SerializationJsonError:
+                self.funcAlert(alertMessage: "Error serialization JSON")
             }
             self.activityIndicator.stopAnimating()
         }
+    }
+    
+    func funcAlert(alertMessage: String) {
+        let alert = UIAlertController(title: "Alert", message: alertMessage, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
+        }))
+        self.present(alert, animated: true, completion: nil)
     }
 
 }
